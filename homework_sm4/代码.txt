@@ -1,0 +1,12 @@
+$ convert -depth 32 pkulogo.jpeg pkulogo.rgba
+$ gmssl enc -sms4-ecb -e -in pkulogo.rgba -out pkulogo-ecb.rgba -k 123456
+$ convert -size 247x300  -depth 32 pkulogo-ecb.rgba pkulogo-ecb.jpeg
+$ gmssl enc -sms4-cbc -e -in pkulogo.rgba -out pkulogo-cbc.rgba -k 123456
+$ convert -size 247x300  -depth 32 pkulogo-cbc.rgba pkulogo-cbc.jpeg
+$ gmssl enc -sms4-ofb -e -in pkulogo.rgba -out pkulogo-ofb.rgba -k 123456
+$ convert -size 247x300  -depth 32 pkulogo-ofb.rgba pkulogo-ofb.jpeg
+$ gmssl enc -sms4-cfb -e -in pkulogo.rgba -out pkulogo-cfb.rgba -k 123456
+$ convert -size 247x300  -depth 32 pkulogo-cfb.rgba pkulogo-cfb.jpeg
+$ gmssl enc -sms4-ctr -e -in pkulogo.rgba -out pkulogo-ctr.rgba -k 123456
+$ convert -size 247x300  -depth 32 pkulogo-ctr.rgba pkulogo-ctr.jpeg
+
